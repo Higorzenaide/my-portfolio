@@ -1,8 +1,13 @@
 import React from "react";
 
 
-export default function Inital() {
-    return (
-        <h1>Teste</h1>
+const Initial = () => {
+    return(
+        <div>
+            <h1>teste</h1>
+            
+        </div>
     )
 }
+
+export default Initial
