@@ -6,18 +6,26 @@ import Inital from '../pages/Initial/';
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Projects";
+import Footer from "../components/Footer";
 
 
 const Layout = () => {
     return (
-        <>
-            <Header/>
-            <HeroImg/>
-            <Outlet/>
-        </>
-    )
-}
+        <div className="layout">
+            <Header />
+            <HeroImg />
 
+            <main className="content">
+                <Outlet />
+            </main>
+
+            <footer>
+                <Footer />
+            </footer>
+                
+        </div>
+    );
+};
 
 const router = createBrowserRouter([
 
