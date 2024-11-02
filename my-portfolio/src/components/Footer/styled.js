@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
     width: 100%;
-    padding: 6rem 0;
+    padding: 2rem 0;
     background-color: rgba(19, 19, 19, 0.8);
 
     @media screen and (max-width: 640px) {
@@ -16,7 +16,7 @@ export const FooterContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
-    padding: 2rem;
+    padding: 1rem;
     background: linear-gradient(135deg, #1e1e1e, #3b3b3b); /* Fundo gradiente */
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra sutil */
@@ -25,10 +25,12 @@ export const FooterContainer = styled.div`
         grid-template-columns: 1fr; /* Alterar para uma coluna */
         text-align: center; /* Centralizar conteúdo */
         padding: 1.5rem;
+        grid-gap: 0px;
     }
 
     @media screen and (max-width: 480px) {
         padding: 1rem;
+        grid-gap: 0px;
     }
 `;
 
