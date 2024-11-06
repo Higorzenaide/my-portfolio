@@ -3,7 +3,7 @@ import {HeroContainer } from './styled'
 import introImg from '../../assets/intro-bg.jpg'
 import { Link  } from 'react-router-dom'
 
-const HeroImg = () => {
+const HeroHome = () => {
   return (
     <HeroContainer>
 
@@ -25,4 +25,4 @@ const HeroImg = () => {
   )
 }
 
-export default HeroImg
+export default HeroHome

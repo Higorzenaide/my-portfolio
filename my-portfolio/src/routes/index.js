@@ -1,19 +1,38 @@
 import React from "react";
-import {createBrowserRouter, Outlet} from 'react-router-dom'
+import { createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import Header from '../components/Header/';
-import HeroImg from '../components/HeroImg'
-import Inital from '../pages/Initial/';
+import HeroHome from '../components/HeroImgHome';
+import Initial from '../pages/Initial/';
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Projects";
 import Footer from "../components/Footer";
-
+import HeroProjects from "../components/HeroImgProjects";
 
 const Layout = () => {
+    const location = useLocation();
+
+    // Verifica se a rota atual é uma das rotas em que queremos exibir o HeroImg
+    const showHeroHome = ["/"].includes(location.pathname);
+    const showHeroProject = ['/projects','/contact','/about'].includes(location.pathname);
+
+    const heroTexts = {
+        "/projects": { title: "PROJECTS.", subtitle: "My projects" },    
+        "/contact": { title: "CONTACT.", subtitle: "talk of me" },
+        "/about": { title: "ABOUT.", subtitle: "I'm a programming student and this is my website" }
+    };
+
     return (
         <div className="layout">
             <Header />
-            <HeroImg />
+            {showHeroHome && <HeroHome/>}
+
+            {showHeroProject && (
+                <HeroProjects 
+                    title={heroTexts[location.pathname]?.title} 
+                    subtitle={heroTexts[location.pathname]?.subtitle} 
+                />
+            )}
 
             <main className="content">
                 <Outlet />
@@ -22,38 +41,33 @@ const Layout = () => {
             <footer>
                 <Footer />
             </footer>
-                
         </div>
     );
 };
 
 const router = createBrowserRouter([
-
     {
         path: '/',
-        element: <Layout/>,
+        element: <Layout />,
         children: [
             {
                 index: true,
-                element:<Inital/>,
+                element: <Initial />,
             },
             {
-                path:'/about',
-                element:<About/>
+                path: '/about',
+                element: <About />,
             },
             {
-                path:'/projects',
-                element:<Projects/>
+                path: '/projects',
+                element: <Projects />,
             },
             {
-                path:'/contact',
-                element:<Contact/>
+                path: '/contact',
+                element: <Contact />,
             },
         ],
-
     },
-
 ]);
 
-
-export { router }
+export { router };
