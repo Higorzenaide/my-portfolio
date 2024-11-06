@@ -5,7 +5,7 @@ const slideIn = keyframes`
     left: -100%;
   }
   100% {
-    left: 0;
+    left: 15%;
   }
 `;
 
@@ -44,14 +44,16 @@ export const Nav = styled.nav.attrs(({ color }) => ({
             flex-direction:column;
             justify-content:center;
             align-items:center;
-            width:100%;
-            height:100vh;
+            width:70%;
+            height:80vh;
             background: rgba(0,0,0,0.9);
             position: absolute;
-            top:0;
+            top:80%;
             left: -100%;
             z-index:-3;
             transition: z-index 0s 0.3s; /* Para controlar o z-index durante a animação */
+            border-radius:10px;
+            border: 1px solid #fff;
         }
 
         .nav-menu.active, .MHamburguer-container{
@@ -60,13 +62,34 @@ export const Nav = styled.nav.attrs(({ color }) => ({
             transition: z-index 0s; /* Z-index instantâneo ao iniciar a animação */
         }
         
-
-        .nav-menu li{
-            padding: 1rem 0;
+        ul{
+            gap:10px;
         }
 
-        .nav-menu li{
+        .nav-menu li {
+            width: 40%;
+            height: 10%;
             font-size: 2rem;
+            border: 1px solid #ccc;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden; /* Para garantir que o conteúdo do link não ultrapasse */
+        }
+
+        .nav-menu li:hover{
+            background: #ccc;
+            cursor: pointer;
+            transform: scale(0.9);
+        }
+
+        .nav-menu a {
+            display: inline-block; /* Flexbox para centralizar o conteúdo */
+            align-items: center; /* Alinha verticalmente ao centro */
+            justify-content: center; /* Alinha horizontalmente ao centro */
+            width: 100%;
+            height: 100%;
+            text-decoration: none; /* Remove o sublinhado do link */
+            
         }
 
         .MHamburguer-container{
