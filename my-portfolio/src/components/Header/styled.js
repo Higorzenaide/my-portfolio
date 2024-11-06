@@ -5,7 +5,7 @@ const slideIn = keyframes`
     left: -100%;
   }
   100% {
-    left: 15%;
+    left: 5%;
   }
 `;
 
@@ -44,7 +44,7 @@ export const Nav = styled.nav.attrs(({ color }) => ({
             flex-direction:column;
             justify-content:center;
             align-items:center;
-            width:70%;
+            width:90%;
             height:80vh;
             background: rgba(0,0,0,0.9);
             position: absolute;
