@@ -27,6 +27,14 @@ export const Nav = styled.nav.attrs(({ color }) => ({
 
     li{
         padding:0 1rem;
+        
+    }
+
+    li .selected{
+        border:1px solid #fff;
+        padding:0.2rem 0.8rem;
+        border-radius:10px;
+        background-color:rgba(240,240,240,0.2)
     }
 
     a{
@@ -73,7 +81,11 @@ export const Nav = styled.nav.attrs(({ color }) => ({
             border: 1px solid #ccc;
             text-align: center;
             border-radius: 10px;
-            overflow: hidden; /* Para garantir que o conteúdo do link não ultrapasse */
+            display: flex; /* Alinha o conteúdo do link */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            overflow: hidden;
+            padding:0px;
         }
 
         .nav-menu li:hover{
@@ -83,13 +95,12 @@ export const Nav = styled.nav.attrs(({ color }) => ({
         }
 
         .nav-menu a {
-            display: inline-block; /* Flexbox para centralizar o conteúdo */
-            align-items: center; /* Alinha verticalmente ao centro */
-            justify-content: center; /* Alinha horizontalmente ao centro */
             width: 100%;
             height: 100%;
-            text-decoration: none; /* Remove o sublinhado do link */
-            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         .MHamburguer-container{
