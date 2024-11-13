@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../../components/PrincingCard/index.js';
+import Carousel from '../../components/carousel/index.js';
 import { Pricing, CardContainer } from './styled.js';
 import { FaRegPaperPlane } from 'react-icons/fa';
 import { TbTargetArrow } from 'react-icons/tb';
@@ -64,21 +65,26 @@ const cardData = [
 
 const Projects = () => {
   return (
-    <Pricing>
-      <CardContainer>
-        {cardData.map((card, index) => (
-          <Card 
-            key={index}
-            icon={card.icon}
-            title={card.title}
-            price={card.price}
-            features={card.features}
-            buttonText={card.buttonText}
-            buttonIcon={card.buttonIcon}
-          />
-        ))}
-      </CardContainer>
-    </Pricing>
+    <>
+      <Pricing>
+        <CardContainer>
+          {cardData.map((card, index) => (
+            <Card 
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              price={card.price}
+              features={card.features}
+              buttonText={card.buttonText}
+              buttonIcon={card.buttonIcon}
+            />
+          ))}
+        </CardContainer>
+        <Carousel/>
+      </Pricing>
+      
+    </>
+    
   );
 }
 
