@@ -37,21 +37,30 @@ const Carousel = () => {
         }
     };
 
+    const dataInfo = [
+        {title: 'Loja de carros', phrase: 'Tenha mais visibilidade para suas vendas', pricing:'500.00'},
+        {title: 'Babeiro', phrase: 'Tenha mais visibilidade', pricing:'500.00'},
+        {title: 'Cliníca de estética', phrase: 'Consiga mais clientes com um belo site', pricing:'500.00'},
+        {title: 'Babeiro', phrase: 'Tenha mais visibilidade', pricing:'500.00'},
+        {title: 'Babeiro', phrase: 'Tenha mais visibilidade', pricing:'500.00'},
+        {title: 'Babeiro', phrase: 'Tenha mais visibilidade', pricing:'500.00'},
+        {title: 'Babeiro', phrase: 'Tenha mais visibilidade', pricing:'500.00'},]
+
     return (
         <Container>
-            <CarouselContent ref={carousel}>
-                {[Cars, barber, empresa, estetic, Cars, Cars].map((src, index) => (
-                    <Item key={index}>
-                        <Image src={src} alt='carousel item' />
-                        <Info>
-                            <span className='title'>Titulo</span>
-                            <span className='phrase'>frase de enfeito</span>
-                            <span className='pricing'>preço</span>
-                            <ButtonMore>Saiba mais</ButtonMore>
-                        </Info>
-                    </Item>
-                ))}
-            </CarouselContent>
+        <CarouselContent ref={carousel}>
+            {[Cars, barber, empresa, estetic, Cars, Cars].map((src, index) => (
+                <Item key={index}>
+                    <Image src={src} alt='carousel item' />
+                    <Info>
+                        <span className='title'>{dataInfo[index]?.title || 'Título Padrão'}</span>
+                        <span className='phrase'>{dataInfo[index]?.phrase || 'Frase de enfeite'}</span>
+                        <span className='pricing'>{dataInfo[index]?.pricing || 'Preço Padrão'}</span>
+                        <ButtonMore>Saiba mais</ButtonMore>
+                    </Info>
+                </Item>
+            ))}
+        </CarouselContent>
 
             <Buttons>
                 <button className='left' onClick={HandleLeftClick}>

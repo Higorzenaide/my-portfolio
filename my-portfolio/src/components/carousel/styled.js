@@ -36,6 +36,7 @@ export const Item = styled.div`
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   max-width: 300px;
+  min-width: 300px;
   margin: 0 auto;
   height: 380px;
   flex: none;
@@ -64,19 +65,21 @@ export const Info = styled.div`
   color: #fff;
   margin-top: 1.5rem;
   text-align: center;
-
+  word-break: break-word; 
+  justify-content:center;
+  align-items:center;
   .title {
-    font-size: 2.5em;
+    font-size: 2.0em;
     font-weight: bold;
   }
 
   .phrase {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     margin-top: 4px;
   }
 
   .pricing {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: #e5a00d;
     margin-top: 4px;
   }
@@ -101,6 +104,8 @@ export const ButtonMore = styled.button`
   cursor: pointer;
   font-size: 0.9em;
   margin-top: 1.9rem;
+  max-width:180px;
+  text-align:center;
 
   &:hover {
     background-color: #e55a00;

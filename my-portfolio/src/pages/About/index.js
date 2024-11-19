@@ -1,8 +1,8 @@
 import React from 'react'
-
+import AboutContent from '../../components/AboutContent'
 const About = () => {
   return (
-    <div>index</div>
+    <AboutContent/>
   )
 }
 
